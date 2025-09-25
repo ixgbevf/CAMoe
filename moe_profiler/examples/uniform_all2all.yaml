@@ -1,0 +1,36 @@
+scene:
+  scenario: uniform_all2all
+
+routing:
+  mode: random  # not used in this scenario; routing map is constructed uniformly
+
+model:
+  hidden_size: 2048
+  num_experts: 128
+  topk: 8
+  bh: 2   # bytes per hidden element (bf16/fp16=2)
+  bp: 4   # bytes per prob element (float32)
+
+parallel:
+  ep_size: 4
+  tp_size: 1
+  pp_size: 1
+
+measure:
+  sizes: [128, 256, 384, 512, 640, 768, 896, 1024]
+  warmup_iters: 10
+  iters: 30
+  sync_cuda: true
+  include_self_edge: false  # include i==j self-loop traffic
+
+fit:
+  enable: true
+
+plots:
+  enable: true
+
+paths:
+  data_dir: data
+  measurements_dir: measurements
+  results_dir: results
+  plots_dir: plots

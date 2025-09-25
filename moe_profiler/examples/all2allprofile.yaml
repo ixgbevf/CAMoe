@@ -1,0 +1,46 @@
+scene:
+  scenario: all2all_profile
+
+routing:
+  mode: random
+  random:
+    tokens_per_rank: 4096   # actual per-M sizes are taken from measure.sizes
+    topk: 8
+    seed: 42
+    jitter_ratio: 0.2    # per-rank total send tokens vary within <=10% range across ranks
+    bias_prob: 0.1       # bias probability to promote target edge coverage under jitter constraint
+
+model:
+  hidden_size: 2048
+  num_experts: 128
+  topk: 8
+  bh: 2   # bytes per hidden element (bf16/fp16=2)
+  bp: 4   # bytes per prob element (float32)
+
+parallel:
+  ep_size: 4
+  tp_size: 1
+  pp_size: 1
+
+measure:
+  # Each value M drives tokens_per_rank=M for random routing maps.
+  sizes: [128, 256, 384, 512, 640, 784, 896, 1024]
+  warmup_iters: 10
+  iters: 30
+  max_attempts: 500
+  sync_cuda: true
+
+fit:
+  enable: true
+
+plots:
+  enable: true
+
+paths:
+  data_dir: data
+  measurements_dir: measurements
+  # New results from this run will be written under this base directory (with timestamp subfolder)
+  results_dir: results
+  plots_dir: plots
+  # Load baseline fit from this directory (or point directly to the JSON file)
+  baseline_results_dir: /workspace/Megatron-LM/tools/moe_profiler/results/20250908_124051

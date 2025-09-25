@@ -1,0 +1,42 @@
+scene:
+  scenario: coarse_baseline
+
+routing:
+  mode: random  # not used; coarse_baseline builds uniform routing internally
+  random:
+    tokens_per_rank: 4096
+    topk: 8
+    seed: 123
+
+model:
+  hidden_size: 2048
+  num_experts: 128
+  topk: 2
+  bh: 2   # bytes per hidden element (bf16/fp16=2)
+  bp: 4   # bytes per prob element
+
+parallel:
+  ep_size: 4
+  tp_size: 1
+  pp_size: 1
+
+measure:
+  sizes: [256, 512, 1024, 2048, 4096]
+  warmup_iters: 5
+  iters: 20
+  sync_cuda: true
+  # 全局逐边串行；每条边使用 sender 端单个 CUDA 窗口测量 preprocess+dispatch+combine 的端到端时间
+  baseline_only_lower_triangle: false
+  include_self_edge: false
+
+fit:
+  enable: true
+
+plots:
+  enable: false
+
+paths:
+  data_dir: data
+  measurements_dir: measurements
+  results_dir: results
+  plots_dir: plots

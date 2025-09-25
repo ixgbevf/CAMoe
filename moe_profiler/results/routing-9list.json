@@ -1,0 +1,194 @@
+[
+  {
+    "layer": "layer_0",
+    "max_total_ms": 139.87259419759116
+  },
+  {
+    "layer": "layer_1",
+    "max_total_ms": 131.33414204915366
+  },
+  {
+    "layer": "layer_10",
+    "max_total_ms": 196.91144816080728
+  },
+  {
+    "layer": "layer_11",
+    "max_total_ms": 135.64962259928384
+  },
+  {
+    "layer": "layer_12",
+    "max_total_ms": 208.6492156982422
+  },
+  {
+    "layer": "layer_13",
+    "max_total_ms": 130.2633819580078
+  },
+  {
+    "layer": "layer_14",
+    "max_total_ms": 173.51031494140625
+  },
+  {
+    "layer": "layer_15",
+    "max_total_ms": 169.12588500976562
+  },
+  {
+    "layer": "layer_16",
+    "max_total_ms": 178.08998107910156
+  },
+  {
+    "layer": "layer_17",
+    "max_total_ms": 164.8032430013021
+  },
+  {
+    "layer": "layer_18",
+    "max_total_ms": 147.01670837402344
+  },
+  {
+    "layer": "layer_19",
+    "max_total_ms": 160.8673299153646
+  },
+  {
+    "layer": "layer_2",
+    "max_total_ms": 120.40362803141277
+  },
+  {
+    "layer": "layer_20",
+    "max_total_ms": 179.42562357584634
+  },
+  {
+    "layer": "layer_21",
+    "max_total_ms": 170.5151112874349
+  },
+  {
+    "layer": "layer_22",
+    "max_total_ms": 180.27110799153647
+  },
+  {
+    "layer": "layer_23",
+    "max_total_ms": 137.26788330078125
+  },
+  {
+    "layer": "layer_24",
+    "max_total_ms": 199.05809529622397
+  },
+  {
+    "layer": "layer_25",
+    "max_total_ms": 151.72198486328125
+  },
+  {
+    "layer": "layer_26",
+    "max_total_ms": 163.13207499186197
+  },
+  {
+    "layer": "layer_27",
+    "max_total_ms": 162.92283630371094
+  },
+  {
+    "layer": "layer_28",
+    "max_total_ms": 179.36827596028647
+  },
+  {
+    "layer": "layer_29",
+    "max_total_ms": 146.0319620768229
+  },
+  {
+    "layer": "layer_3",
+    "max_total_ms": 141.5028076171875
+  },
+  {
+    "layer": "layer_30",
+    "max_total_ms": 152.915283203125
+  },
+  {
+    "layer": "layer_31",
+    "max_total_ms": 164.64998372395834
+  },
+  {
+    "layer": "layer_32",
+    "max_total_ms": 156.56072489420572
+  },
+  {
+    "layer": "layer_33",
+    "max_total_ms": 160.9700673421224
+  },
+  {
+    "layer": "layer_34",
+    "max_total_ms": 213.49239603678384
+  },
+  {
+    "layer": "layer_35",
+    "max_total_ms": 118.94784037272136
+  },
+  {
+    "layer": "layer_36",
+    "max_total_ms": 182.85943094889322
+  },
+  {
+    "layer": "layer_37",
+    "max_total_ms": 153.13202921549478
+  },
+  {
+    "layer": "layer_38",
+    "max_total_ms": 196.21410115559897
+  },
+  {
+    "layer": "layer_39",
+    "max_total_ms": 166.50445048014322
+  },
+  {
+    "layer": "layer_4",
+    "max_total_ms": 122.60044860839844
+  },
+  {
+    "layer": "layer_40",
+    "max_total_ms": 187.26775614420572
+  },
+  {
+    "layer": "layer_41",
+    "max_total_ms": 134.76966857910156
+  },
+  {
+    "layer": "layer_42",
+    "max_total_ms": 208.4297332763672
+  },
+  {
+    "layer": "layer_43",
+    "max_total_ms": 121.50203704833984
+  },
+  {
+    "layer": "layer_44",
+    "max_total_ms": 140.75050354003906
+  },
+  {
+    "layer": "layer_45",
+    "max_total_ms": 184.0145009358724
+  },
+  {
+    "layer": "layer_46",
+    "max_total_ms": 145.58958943684897
+  },
+  {
+    "layer": "layer_47",
+    "max_total_ms": 177.26976013183594
+  },
+  {
+    "layer": "layer_5",
+    "max_total_ms": 137.4573211669922
+  },
+  {
+    "layer": "layer_6",
+    "max_total_ms": 138.63048807779947
+  },
+  {
+    "layer": "layer_7",
+    "max_total_ms": 137.90856424967447
+  },
+  {
+    "layer": "layer_8",
+    "max_total_ms": 166.00951131184897
+  },
+  {
+    "layer": "layer_9",
+    "max_total_ms": 155.50635274251303
+  }
+]

@@ -1,0 +1,31 @@
+\
+scene:
+  scenario: a2a_validation
+routing:
+  mode: custom
+  custom:
+    csv_path: data/validation_map.csv  
+model:
+  hidden_size: 2048
+  num_experts: 128
+  topk: 8
+  bh: 2
+  bp: 8
+parallel:
+  ep_size: 4
+  tp_size: 1
+  pp_size: 1
+measure:
+  sizes: [8192]
+  warmup_iters: 5
+  iters: 20
+  sync_cuda: true
+fit:
+  enable: true
+plots:
+  enable: true
+paths:
+  data_dir: data
+  measurements_dir: measurements
+  results_dir: results
+  plots_dir: plots

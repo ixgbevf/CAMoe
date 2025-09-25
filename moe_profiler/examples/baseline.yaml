@@ -1,0 +1,51 @@
+scene:
+  scenario: baseline
+
+routing:
+  mode: random
+  random:
+    tokens_per_rank: 4096
+    topk: 8
+    seed: 123
+
+model:
+  hidden_size: 2048
+  num_experts: 128
+  topk: 8
+  bh: 2   # bytes per hidden element (bf16/fp16=2)
+  bp: 4   # bytes per prob element
+
+parallel:
+  ep_size: 4
+  tp_size: 1
+  pp_size: 1
+
+measure:
+  # Token counts (M) for per-edge measurements; each (i->j) edge is measured separately.
+  sizes: [128, 256, 384, 512, 640, 768, 896, 1024]
+  warmup_iters: 5
+  iters: 30
+  max_attempts: 50
+  sync_cuda: true
+  # Measure all edges for this src (include j<i, j==i, j>i)
+  baseline_only_lower_triangle: false
+  # Record dispatch timing on sender side; combine is recorded on receiver side by code.
+  dispatch_side: sender
+  # Use sender-side CUDA timing difference to estimate combine: (dispatch+combine) - dispatch
+  combine_from_sender_diff: true
+  # If not using sender diff, you can choose:
+  # combine_timing_mode: receiver_local | max_of_locals | cross_rank_diff
+  # combine_diff_direction: sender_to_receiver | receiver_to_sender
+  # baseline_target_dst: null  # uncomment to restrict to a single destination j
+
+fit:
+  enable: true
+
+plots:
+  enable: true
+
+paths:
+  data_dir: data
+  measurements_dir: measurements
+  results_dir: results
+  plots_dir: plots

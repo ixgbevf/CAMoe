@@ -1,0 +1,34 @@
+\
+scene:
+  scenario: all2all_profile
+routing:
+  mode: random
+  random:
+    tokens_per_rank: 8192
+    topk: 8
+    seed: 321
+model:
+  hidden_size: 4096
+  num_experts: 8
+  topk: 8
+  bh: 2
+  bp: 4
+parallel:
+  ep_size: 4
+  tp_size: 1
+  pp_size: 1
+measure:
+  sizes: [256, 384, 512, 640, 768, 896, 1024]
+  warmup_iters: 5
+  iters: 20
+  max_attempts: 200
+  sync_cuda: true
+fit:
+  enable: true
+plots:
+  enable: true
+paths:
+  data_dir: data
+  measurements_dir: measurements
+  results_dir: results
+  plots_dir: plots
